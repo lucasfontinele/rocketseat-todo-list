@@ -37,7 +37,12 @@
 }
 
 .tasksItemsContainer {
+  width: 100%;
+  padding: 24px 0;
+  row-gap: 12px;
+
   display: flex;
+  flex-direction: column;
   border-radius: 8px;
   border-top: 1px solid var(--gray-400);
 }

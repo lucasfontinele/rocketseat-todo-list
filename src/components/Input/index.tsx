@@ -15,7 +15,11 @@ function Input({ onPressEnter, ...props }: InputProps) {
   }; 
 
   return (
-    <input className={styles.inputContainer} onKeyDown={(e) => onKeyDown(e.code)} {...props} />
+    <input
+      className={styles.inputContainer}
+      onKeyDown={(e) => onKeyDown(e.code)}
+      {...props}
+    />
   );
 }
 

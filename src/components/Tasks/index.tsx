@@ -27,7 +27,7 @@ function Tasks({ tasks }: TasksProps) {
       <>
         {tasks.map(t => (
           <TaskItem
-            key={t.description}
+            key={t.id}
             title={t.description}
             checked={t.completed}
             onDeleteTask={() => {}}
