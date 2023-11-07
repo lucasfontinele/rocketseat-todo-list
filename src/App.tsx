@@ -14,7 +14,7 @@ function App() {
       <Header />
 
       <form>
-        <Input onPressEnter={() => {}} />
+        <Input placeholder="Adicione uma nova tarefa" onPressEnter={() => {}} />
 
         <Button type="button">
           Criar

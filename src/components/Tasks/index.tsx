@@ -1,6 +1,7 @@
 import { Task } from "../../hooks/useTodo";
 import clipboardImg from "../../assets/images/Clipboard.png";
 import styles from "./styles.module.css";
+import TaskItem from "../TaskItem";
 
 type TasksProps = {
   tasks: Array<Task>;
@@ -22,7 +23,18 @@ function Tasks({ tasks }: TasksProps) {
       );
     }
 
-    return null;
+    return (
+      <>
+        {tasks.map(t => (
+          <TaskItem
+            key={t.description}
+            title={t.description}
+            checked={t.completed}
+            onDeleteTask={() => {}}
+          />
+        ))}
+      </>  
+    );
   }
 
   return (

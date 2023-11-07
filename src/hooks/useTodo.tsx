@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export type Task = {
   description: string;
-  completed: string;
+  completed: boolean;
 }
 
 function useTodo() {
