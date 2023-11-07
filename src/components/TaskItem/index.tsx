@@ -6,15 +6,16 @@ type TaskItemProps = {
   title: string;
   checked: boolean;
   onDeleteTask: (id: number) => void;
+  onCompleteTask: (id: number) => void;
 }
 
-function TaskItem({ id, title, checked, onDeleteTask }: TaskItemProps) {
+function TaskItem({ id, title, checked, onDeleteTask, onCompleteTask }: TaskItemProps) {
   return (
     <div className={styles.taskItemContainer}>
       <input
         type="checkbox"
-        defaultChecked={checked}
         checked={checked}
+        onChange={() => onCompleteTask(id)}
       />
 
       <p className={styles.taskDescription}>

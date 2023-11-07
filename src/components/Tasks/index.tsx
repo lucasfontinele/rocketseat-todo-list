@@ -6,9 +6,10 @@ import TaskItem from "../TaskItem";
 type TasksProps = {
   tasks: Array<Task>;
   onDeleteTask: (id: number) => void;
+  onCompleteTask: (id: number) => void;
 }
 
-function Tasks({ tasks, onDeleteTask }: TasksProps) {
+function Tasks({ tasks, onDeleteTask, onCompleteTask }: TasksProps) {
   const renderTasks = () => {
     if (tasks.length <= 0) {
       return (
@@ -33,6 +34,7 @@ function Tasks({ tasks, onDeleteTask }: TasksProps) {
             title={t.description}
             checked={t.completed}
             onDeleteTask={onDeleteTask}
+            onCompleteTask={onCompleteTask}
           />
         ))}
       </>  

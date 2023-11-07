@@ -21,7 +21,7 @@ function useTodo() {
   }
 
   const handleRemoveTask = (id: number) => {
-    const prevTasks = tasks;
+    const prevTasks = [...tasks];
     const foundTask = prevTasks.findIndex(t => t.id === id);
 
     if (foundTask <= -1) return;
@@ -31,10 +31,22 @@ function useTodo() {
     setTasks(prevTasks);
   };
 
+  const handleCompleteTask = (id: number) => {
+    const prevTasks = [...tasks];
+    const foundTask = prevTasks.findIndex(t => t.id === id);
+
+    if (foundTask <= -1) return;
+
+    prevTasks[foundTask].completed = !prevTasks[foundTask].completed;
+
+    setTasks(prevTasks);
+  };
+
   return {
     tasks,
     handleAddTask,
     handleRemoveTask,
+    handleCompleteTask,
   }
 }
 
