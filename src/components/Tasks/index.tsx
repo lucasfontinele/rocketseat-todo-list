@@ -10,6 +10,9 @@ type TasksProps = {
 }
 
 function Tasks({ tasks, onDeleteTask, onCompleteTask }: TasksProps) {
+  const completedTasks = tasks.filter(t => !!t.completed);
+
+
   const renderTasks = () => {
     if (tasks.length <= 0) {
       return (
@@ -27,7 +30,7 @@ function Tasks({ tasks, onDeleteTask, onCompleteTask }: TasksProps) {
 
     return (
       <>
-        {tasks.map(t => (
+        {tasks.sort((a, b) => (a === b) ? 0 : a ? -1 : 1).map(t => (
           <TaskItem
             key={t.id}
             id={t.id}
@@ -46,12 +49,12 @@ function Tasks({ tasks, onDeleteTask, onCompleteTask }: TasksProps) {
       <header className={styles.tasksHeaderContainer}>
         <div>
           <strong>Tarefas criadas</strong>
-          <span>0</span>
+          <span>{tasks.length}</span>
         </div>
 
         <div>
           <strong>Concluídas</strong>
-          <span>0</span>
+          <span>{completedTasks.length}</span>
         </div>
       </header>
 
