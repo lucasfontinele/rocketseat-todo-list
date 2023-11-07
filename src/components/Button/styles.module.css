@@ -1,0 +1,16 @@
+.buttonContainer {
+  padding: 16px;
+  display: flex;
+  column-gap: 8px;
+
+  font-size: 14px;
+  color: var(--gray-100);
+
+  background-color: var(--blue-dark);
+  border-radius: 8px;
+  border: none;
+}
+
+.buttonContainer:hover {
+  cursor: pointer;
+}
