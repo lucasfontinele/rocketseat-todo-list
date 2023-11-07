@@ -32,7 +32,7 @@ function Tasks({ tasks, onDeleteTask, onCompleteTask }: TasksProps) {
             key={t.id}
             id={t.id}
             title={t.description}
-            checked={t.completed}
+            completed={t.completed}
             onDeleteTask={onDeleteTask}
             onCompleteTask={onCompleteTask}
           />
