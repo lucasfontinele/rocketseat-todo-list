@@ -2,12 +2,13 @@ import TrashIcon from "../../assets/icons/Trash";
 import styles from "./styles.module.css";
 
 type TaskItemProps = {
+  id: number;
   title: string;
   checked: boolean;
-  onDeleteTask: () => void;
+  onDeleteTask: (id: number) => void;
 }
 
-function TaskItem({ title, checked }: TaskItemProps) {
+function TaskItem({ id, title, checked, onDeleteTask }: TaskItemProps) {
   return (
     <div className={styles.taskItemContainer}>
       <input
@@ -16,9 +17,15 @@ function TaskItem({ title, checked }: TaskItemProps) {
         checked={checked}
       />
 
-      <p className={styles.taskDescription}>{title}</p>
+      <p className={styles.taskDescription}>
+        {title}
+      </p>
 
-      <button className={styles.deleteIconContainer} type="button">
+      <button
+        className={styles.deleteIconContainer}
+        type="button"
+        onClick={() => onDeleteTask(id)}
+      >
         <TrashIcon />
       </button>
     </div>

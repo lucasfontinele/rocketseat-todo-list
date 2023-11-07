@@ -5,9 +5,10 @@ import TaskItem from "../TaskItem";
 
 type TasksProps = {
   tasks: Array<Task>;
+  onDeleteTask: (id: number) => void;
 }
 
-function Tasks({ tasks }: TasksProps) {
+function Tasks({ tasks, onDeleteTask }: TasksProps) {
   const renderTasks = () => {
     if (tasks.length <= 0) {
       return (
@@ -28,9 +29,10 @@ function Tasks({ tasks }: TasksProps) {
         {tasks.map(t => (
           <TaskItem
             key={t.id}
+            id={t.id}
             title={t.description}
             checked={t.completed}
-            onDeleteTask={() => {}}
+            onDeleteTask={onDeleteTask}
           />
         ))}
       </>  

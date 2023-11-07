@@ -20,9 +20,21 @@ function useTodo() {
     ]);
   }
 
+  const handleRemoveTask = (id: number) => {
+    const prevTasks = tasks;
+    const foundTask = prevTasks.findIndex(t => t.id === id);
+
+    if (foundTask <= -1) return;
+
+    prevTasks.splice(foundTask, 1);
+
+    setTasks(prevTasks);
+  };
+
   return {
     tasks,
     handleAddTask,
+    handleRemoveTask,
   }
 }
 

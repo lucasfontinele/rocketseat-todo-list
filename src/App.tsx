@@ -8,7 +8,7 @@ import Tasks from "./components/Tasks";
 import useTodo from "./hooks/useTodo";
 
 function App() {
-  const { tasks, handleAddTask } = useTodo();
+  const { tasks, handleAddTask, handleRemoveTask } = useTodo();
   const [taskDescription, setTaskDescription] = useState('');
 
   const onSubmitTask = () => {
@@ -35,7 +35,7 @@ function App() {
         </Button>
       </div>
 
-      <Tasks tasks={tasks} />
+      <Tasks tasks={tasks} onDeleteTask={handleRemoveTask} />
     </main>
   )
 }
