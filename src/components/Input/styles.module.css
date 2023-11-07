@@ -1,0 +1,21 @@
+.inputContainer {
+  padding: 16px;
+  max-width: 640px;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--gray-700);
+  background: var(--gray-500);
+  
+  color: var(--gray-300);
+  font-size: 16px;
+}
+
+.inputContainer::placeholder {
+  color: var(--gray-300);
+  font-size: 16px;
+}
+
+.inputContainer:focus {
+  outline: 1px solid var(--purple-dark);
+}
+
